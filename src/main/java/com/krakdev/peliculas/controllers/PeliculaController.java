@@ -30,6 +30,7 @@ public class PeliculaController {
         Pelicula nuevaPelicula = servicioPelicula.crear(pelicula);
         return new ResponseEntity<>(nuevaPelicula, HttpStatus.CREATED);
     }
+    
 
     @GetMapping
     public ResponseEntity<List<Pelicula>> listar() {
@@ -37,6 +38,7 @@ public class PeliculaController {
         return new ResponseEntity<>(peliculas, HttpStatus.OK);
     }
 
+    
     @GetMapping("/{id}")
     public ResponseEntity<Pelicula> buscarPorId(@PathVariable Long id) {
         Pelicula pelicula = servicioPelicula.buscarPorId(id);
